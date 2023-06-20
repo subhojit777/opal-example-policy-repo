@@ -25,14 +25,14 @@ package app.rbac
 default allow = false
 
 # Allow admins to do anything
-allow {
-	user_is_admin
-}
+# allow {
+# 	user_is_admin
+# }
 
 # Allow bob to do anything
-allow {
-	input.user == "bob"
-}
+# allow {
+# 	input.user == "bob"
+# }
 
 # you can ignore this rule, it's simply here to create a dependency
 # to another rego policy file, so we can demonstate how to work with
@@ -44,19 +44,19 @@ allow {
 #}
 
 # Allow the action if the user is granted permission to perform the action.
-# allow {
-# 	# Find permissions for the user.
-# 	some permission
-# 	user_is_granted[permission]
+allow {
+	# Find permissions for the user.
+	some permission
+	user_is_granted[permission]
 
-# 	# Check if the permission permits the action.
-# 	input.action == permission.action
-# 	input.type == permission.type
+	# Check if the permission permits the action.
+	input.action == permission.action
+	input.type == permission.type
 
-# 	# unless user location is outside US
-# 	country := data.users[input.user].location.country
-# 	country == "US"
-# }
+	# unless user location is outside US
+	country := data.users[input.user].location.country
+	country == "US"
+}
 
 # user_is_admin is true if...
 user_is_admin {
