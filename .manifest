@@ -1,3 +1,3 @@
-policies\rbac\rbac.rego
-inventories\attribute\attribute.json
-inventories\rbac\rbac.json
+policies/rbac/rbac.rego
+inventories/attribute/attribute.json
+inventories/rbac/rbac.json
