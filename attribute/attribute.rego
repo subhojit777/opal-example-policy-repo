@@ -5,5 +5,5 @@ import data.attribute
 default allow := false
 
 allow {
-    attribute.user_attributes[input.user].tenure >= 17
+    attribute.user_attributes[input.user].tenure >= 15
 }
