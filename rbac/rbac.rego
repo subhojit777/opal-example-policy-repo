@@ -56,7 +56,7 @@ allow {
 
 	# unless user location is outside US
 	country := rbac.users[input.user].location.country
-	country == "US"
+	country == "IN"
 }
 
 # user_is_admin is true if...
